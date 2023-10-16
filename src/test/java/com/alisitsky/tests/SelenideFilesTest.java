@@ -11,8 +11,7 @@ import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
 
 import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Selenide.*;
 
 public class SelenideFilesTest {
 
@@ -37,7 +36,9 @@ public class SelenideFilesTest {
     @Test
     void downloadPdfFileTest() throws Exception {
         open("https://junit.org/junit5/docs/current/user-guide/");
-        File downloaded = $("a[href*='junit-user-guide-5.9.3.pdf']").download();
+//        open("https://demoqa.com/text-box");
+        sleep(2000);
+        File downloaded = $("a[href*='junit-user-guide-5.10.0.pdf']").download();
         PDF pdf = new PDF(downloaded);
         Assertions.assertEquals("JUnit 5 User Guide", pdf.title);
     }
