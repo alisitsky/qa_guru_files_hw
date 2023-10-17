@@ -4,7 +4,6 @@ import com.codeborne.pdftest.PDF;
 import com.codeborne.xlstest.XLS;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStream;
@@ -36,9 +35,9 @@ public class SelenideFilesTest {
     @Test
     void downloadPdfFileTest() throws Exception {
         open("https://junit.org/junit5/docs/current/user-guide/");
-//        open("https://demoqa.com/text-box");
         sleep(2000);
         File downloaded = $("a[href*='junit-user-guide-5.10.0.pdf']").download();
+        System.out.println(1);
         PDF pdf = new PDF(downloaded);
         Assertions.assertEquals("JUnit 5 User Guide", pdf.title);
     }
