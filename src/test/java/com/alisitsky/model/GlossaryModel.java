@@ -2,7 +2,7 @@ package com.alisitsky.model;
 
 import com.google.gson.annotations.SerializedName;
 
-public class GlossaryModel {
+public class  GlossaryModel {
 
     private String title;
 

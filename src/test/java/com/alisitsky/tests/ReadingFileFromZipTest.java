@@ -3,6 +3,7 @@ package com.alisitsky.tests;
 import com.codeborne.pdftest.PDF;
 import com.codeborne.xlstest.XLS;
 import com.opencsv.CSVReader;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import java.io.*;
 import java.nio.charset.StandardCharsets;
@@ -12,7 +13,7 @@ import static com.alisitsky.utils.Utils.*;
 
 public class ReadingFileFromZipTest {
 
-    private static String   zipFilePath = "hw/hw.zip",
+    private static String   zipFilePath = "hw/archive.zip",
                             pdfFileName = "shell gamedesign.pdf",
                             csvFileName = "table.csv",
                             xlsxFileName = "table.xlsx",
@@ -21,6 +22,7 @@ public class ReadingFileFromZipTest {
                             xlsxFileExpectedData = "Bob";
 
     @Test
+    @DisplayName("PDF файл из ZIP архива содержит текст")
     void pdfFileInZipHasText() throws Exception {
         try (InputStream inputStream = getInputStreamForFileFromZip(zipFilePath ,pdfFileName)) {
             PDF pdf = new PDF(inputStream);
@@ -29,6 +31,7 @@ public class ReadingFileFromZipTest {
     }
 
     @Test
+    @DisplayName("CSV файл из ZIP архива содержит текст")
     void csvFileInZipHasText() throws Exception {
         try (InputStream inputStream = getInputStreamForFileFromZip(zipFilePath ,csvFileName);
              CSVReader csvReader = new CSVReader(new InputStreamReader(inputStream, StandardCharsets.UTF_8))) {
@@ -37,6 +40,7 @@ public class ReadingFileFromZipTest {
     }
 
     @Test
+    @DisplayName("XLSX файл из ZIP архива содержит текст")
     void xlsxFileInZipHasText() throws Exception {
         try (InputStream inputStream = getInputStreamForFileFromZip(zipFilePath ,xlsxFileName)) {
              XLS xlsx = new XLS(inputStream);
