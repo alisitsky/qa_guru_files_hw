@@ -1,0 +1,10 @@
+{
+  "title": "Dude",
+  "personalData": {
+    "firstName": "Jeffrey",
+    "lastName": "Lebowski",
+    "realName": "Dude"
+  },
+  "year": 1991,
+  "city": "Los Angeles"
+}

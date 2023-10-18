@@ -40,7 +40,7 @@ public class FileParsingTest {
 
     @Test
     void zipTest() throws Exception {
-        try (InputStream stream = cl.getResourceAsStream("sample.zip");
+        try (InputStream stream = cl.getResourceAsStream("lesson/sample.zip");
              ZipInputStream zis = new ZipInputStream(stream)) {
 
             ZipEntry entry;
@@ -53,7 +53,7 @@ public class FileParsingTest {
 
     @Test
     void jsonTest() throws Exception {
-        try (InputStream stream = cl.getResourceAsStream("glossary.json");
+        try (InputStream stream = cl.getResourceAsStream("lesson/glossary.json");
              Reader reader = new InputStreamReader(stream)) {
             JsonObject jsonObject = gson.fromJson(reader, JsonObject.class);
 
@@ -72,7 +72,7 @@ public class FileParsingTest {
 
     @Test
     void improvedJsonTest() throws  Exception {
-        try (InputStream stream = cl.getResourceAsStream("glossary.json");
+        try (InputStream stream = cl.getResourceAsStream("lesson/glossary.json");
              Reader reader = new InputStreamReader(stream)) {
             GlossaryModel glossary = gson.fromJson(reader, GlossaryModel.class);
 
