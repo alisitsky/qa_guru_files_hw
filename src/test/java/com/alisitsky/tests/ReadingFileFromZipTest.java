@@ -19,8 +19,8 @@ public class ReadingFileFromZipTest {
                             csvFileName = "table.csv",
                             xlsxFileName = "table.xlsx",
                             pdfFileExpectedData = "Джесси Шелл – один из известнейших геймдизайнеров, который работал на\r\nWalt Disney Company",
-                            csvFileExpectedData = "Bob1",
-                            xlsxFileExpectedData = "Bob1";
+                            csvFileExpectedData = "Bob",
+                            xlsxFileExpectedData = "Bob";
 
     @Test
     @DisplayName("PDF файл из ZIP архива содержит текст")
